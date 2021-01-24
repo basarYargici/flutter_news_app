@@ -1,0 +1,13 @@
+What have been done for first day:
+- Structure created-organised.
+- Category and news tile models created.
+- Over those models, data were shown to user.
+
+What will be done:
+- Image.network takes some time to load image. So I should find a way to show progress bar or faster model.
+- onTop methods are did not implemented. with tapping, navigating to different screen should be done.
+- In category detail screen, I should show articles to users which are relevant to tapped topic.
+- In news detail screen, user will visit webpage screen. So I should look the implementation of how to do native things.
+- Responsive UI should be searched.
+
+
