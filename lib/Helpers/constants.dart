@@ -28,7 +28,7 @@ final TextStyle categoryStyle = baseStyle.copyWith(
 );
 
 final TextStyle titleStyle = baseStyle.copyWith(
-  fontSize: 20,
+  fontSize: 15,
   color: Colors.white,
   fontWeight: FontWeight.bold,
 );

@@ -30,6 +30,7 @@ dependencies:
   cupertino_icons: ^1.0.0
   http: ^0.12.2
   intl: ^0.16.1
+  cached_network_image: ^2.5.0
 
 
 dev_dependencies:
@@ -40,6 +41,8 @@ dev_dependencies:
 # following page: https://dart.dev/tools/pub/pubspec
 
 # The following section is specific to Flutter.
+interaction:
+management:
 flutter:
 
   # The following line ensures that the Material Icons font is

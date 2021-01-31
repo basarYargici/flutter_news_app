@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:news/Helpers/constants.dart';
@@ -29,17 +30,60 @@ class GeneralNewsView extends StatelessWidget {
               itemCount: newsTileList.length,
               itemBuilder: (context, index) {
                 return Stack(alignment: Alignment.bottomCenter, children: [
-                  Image.network(newsTileList[index].urlToImage),
+                  // CachedNetworkImage(
+                  //   imageUrl: "http://via.placeholder.com/350x150",
+                  //   progressIndicatorBuilder: (context, url, downloadProgress) =>
+                  //       CircularProgressIndicator(value: downloadProgress.progress),
+                  //   errorWidget: (context, url, error) => Icon(Icons.error),
+                  // ),
+
+                  CachedNetworkImage(
+                    imageUrl: newsTileList[index].urlToImage,
+
+                  ),
+
+                  //Image.network(newsTileList[index].urlToImage),
                   Container(
                       width: MediaQuery.of(context).size.width,
                       height: 40,
                       color: Colors.black45,
                       alignment: Alignment.centerLeft,
-                      child: Text(
-                        newsTileList[index].source,
-                        style: titleStyle,
-                        maxLines: 2,
-                        overflow: TextOverflow.ellipsis,
+                      child: Row(
+                        children: [
+                          Expanded(
+                            child: Text(
+                              newsTileList[index].title,
+                              style: titleStyle.copyWith(fontSize: 15),
+                              maxLines: 2,
+                              overflow: TextOverflow.ellipsis,
+                            ),
+                          ),
+                          Container(
+                            width: 90,
+                            child: Column(
+                              children: [
+                                Expanded(
+                                  child: Text(
+                                    newsTileList[index].source,
+                                    style: titleStyle.copyWith(fontSize: 10),
+                                    textAlign: TextAlign.end,
+                                    maxLines: 1,
+                                    overflow: TextOverflow.ellipsis,
+                                  ),
+                                ),
+                                Expanded(
+                                  child: Text(
+                                    newsTileList[index].publishedAt,
+                                    style: titleStyle.copyWith(fontSize: 10),
+                                    textAlign: TextAlign.end,
+                                    maxLines: 1,
+                                    overflow: TextOverflow.ellipsis,
+                                  ),
+                                ),
+                              ],
+                            ),
+                          )
+                        ],
                       ))
                 ]);
               },
