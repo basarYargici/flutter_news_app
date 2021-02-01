@@ -5,7 +5,7 @@ import 'package:news/Models/news_model.dart';
 import 'package:news/Models/news_tile_model.dart';
 
 class NewsService {
-  static final String country = "us";
+  static final String country = "tr";
   String url = "https://newsapi.org/v2/top-headlines?country=$country&apiKey=$API_KEY";
 
   Future<News> getData() async {
